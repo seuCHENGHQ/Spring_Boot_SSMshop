@@ -55,3 +55,9 @@
 2019-01-09 15:26:37:038 [main] INFO  com.chq.ssmshop.SSMshopApplication - Starting SSMshopApplication on chq-Vostro-3669 with PID 17382 (/home/chq/java_workspace_STS/SSMshop/target/classes started by chq in /home/chq/java_workspace_STS/SSMshop)
 2019-01-09 15:26:37:041 [main] INFO  com.chq.ssmshop.SSMshopApplication - No active profile set, falling back to default profiles: default
 2019-01-09 15:26:39:532 [main] INFO  com.chq.ssmshop.SSMshopApplication - Started SSMshopApplication in 2.752 seconds (JVM running for 3.165)
+2019-01-09 19:38:44:248 [main] INFO  com.chq.ssmshop.SSMshopApplication - Starting SSMshopApplication on chq-Vostro-3669 with PID 24772 (/home/chq/java_workspace_STS/SSMshop/target/classes started by chq in /home/chq/java_workspace_STS/SSMshop)
+2019-01-09 19:38:44:276 [main] INFO  com.chq.ssmshop.SSMshopApplication - No active profile set, falling back to default profiles: default
+2019-01-09 19:38:49:291 [main] INFO  com.chq.ssmshop.SSMshopApplication - Started SSMshopApplication in 6.111 seconds (JVM running for 7.666)
+2019-01-09 19:43:18:113 [main] INFO  com.chq.ssmshop.SSMshopApplication - Starting SSMshopApplication on chq-Vostro-3669 with PID 25165 (/home/chq/java_workspace_STS/SSMshop/target/classes started by chq in /home/chq/java_workspace_STS/SSMshop)
+2019-01-09 19:43:18:128 [main] INFO  com.chq.ssmshop.SSMshopApplication - No active profile set, falling back to default profiles: default
+2019-01-09 19:43:21:821 [main] INFO  com.chq.ssmshop.SSMshopApplication - Started SSMshopApplication in 4.214 seconds (JVM running for 5.025)

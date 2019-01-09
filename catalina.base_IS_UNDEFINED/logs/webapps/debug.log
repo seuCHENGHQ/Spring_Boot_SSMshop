@@ -1321,3 +1321,65 @@
 2019-01-09 15:50:32:917 [http-nio-8080-exec-2] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_name like concat('%',?,'%') AND s.enable_status = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
 2019-01-09 15:50:32:918 [http-nio-8080-exec-2] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - ==> Parameters: 测试(String), 1(Integer)
 2019-01-09 15:50:33:045 [http-nio-8080-exec-2] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - <==      Total: 1
+2019-01-09 19:38:44:253 [main] DEBUG com.chq.ssmshop.SSMshopApplication - Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-09 19:39:30:337 [http-nio-8080-exec-3] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.queryShopList] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:39:30:346 [http-nio-8080-exec-3] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:39:30:529 [http-nio-8080-exec-9] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.AreaDao.listArea] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:39:30:529 [http-nio-8080-exec-9] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:39:31:875 [http-nio-8080-exec-9] DEBUG com.chq.ssmshop.dao.AreaDao.listArea - ==>  Preparing: select * from tb_area order by priority desc; 
+2019-01-09 19:39:31:875 [http-nio-8080-exec-3] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.enable_status = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2019-01-09 19:39:31:908 [http-nio-8080-exec-9] DEBUG com.chq.ssmshop.dao.AreaDao.listArea - ==> Parameters: 
+2019-01-09 19:39:31:909 [http-nio-8080-exec-3] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - ==> Parameters: 1(Integer), 0(Integer), 3(Integer)
+2019-01-09 19:39:32:000 [http-nio-8080-exec-9] DEBUG com.chq.ssmshop.dao.AreaDao.listArea - <==      Total: 3
+2019-01-09 19:39:32:001 [http-nio-8080-exec-3] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - <==      Total: 3
+2019-01-09 19:39:32:028 [http-nio-8080-exec-3] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.queryShopCount] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:39:32:028 [http-nio-8080-exec-3] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:39:32:030 [http-nio-8080-exec-3] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.enable_status = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
+2019-01-09 19:39:32:030 [http-nio-8080-exec-3] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - ==> Parameters: 1(Integer)
+2019-01-09 19:39:32:097 [http-nio-8080-exec-3] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - <==      Total: 1
+2019-01-09 19:43:18:127 [main] DEBUG com.chq.ssmshop.SSMshopApplication - Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2019-01-09 19:43:28:422 [http-nio-8080-exec-5] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.queryShopList] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:43:28:423 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:43:29:412 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.enable_status = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2019-01-09 19:43:29:443 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - ==> Parameters: 1(Integer), 0(Integer), 3(Integer)
+2019-01-09 19:43:29:506 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - <==      Total: 3
+2019-01-09 19:43:29:511 [http-nio-8080-exec-5] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.queryShopCount] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:43:29:511 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:43:29:512 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.enable_status = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
+2019-01-09 19:43:29:512 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - ==> Parameters: 1(Integer)
+2019-01-09 19:43:29:545 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - <==      Total: 1
+2019-01-09 19:43:39:873 [http-nio-8080-exec-10] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.queryShopList] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:43:39:873 [http-nio-8080-exec-10] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:43:39:874 [http-nio-8080-exec-10] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.enable_status = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2019-01-09 19:43:39:875 [http-nio-8080-exec-10] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - ==> Parameters: 1(Integer), 3(Integer), 3(Integer)
+2019-01-09 19:43:39:898 [http-nio-8080-exec-10] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopList - <==      Total: 3
+2019-01-09 19:43:39:899 [http-nio-8080-exec-10] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.queryShopCount] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:43:39:899 [http-nio-8080-exec-10] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:43:39:900 [http-nio-8080-exec-10] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.enable_status = ? AND s.area_id = a.area_id AND s.shop_category_id = sc.shop_category_id 
+2019-01-09 19:43:39:900 [http-nio-8080-exec-10] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - ==> Parameters: 1(Integer)
+2019-01-09 19:43:39:920 [http-nio-8080-exec-10] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopCount - <==      Total: 1
+2019-01-09 19:44:17:940 [http-nio-8080-exec-5] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo] use [master] Strategy, SqlCommanType [INSERT]..
+2019-01-09 19:44:17:940 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2019-01-09 19:44:17:940 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - ==>  Preparing: INSERT INTO tb_person_info(name,gender,email,profile_img,user_type,create_time,last_edit_time,enable_status) VALUES (?,?,?,?,?, ?,?,?) 
+2019-01-09 19:44:17:942 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - ==> Parameters: C(String), 0(String), 596607580@qq.com(String), null, 0(Integer), 2019-01-09 19:44:17.938(Timestamp), 2019-01-09 19:44:17.938(Timestamp), 1(Integer)
+2019-01-09 19:44:17:979 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.PersonInfoDao.insertPersonInfo - <==    Updates: 1
+2019-01-09 19:44:17:981 [http-nio-8080-exec-5] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth] use [master] Strategy, SqlCommanType [INSERT]..
+2019-01-09 19:44:17:981 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：master
+2019-01-09 19:44:17:981 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - ==>  Preparing: insert into tb_local_auth( username,password,create_time,last_edit_time,person_info )values( ?,?,?,?,? ) 
+2019-01-09 19:44:17:982 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - ==> Parameters: register(String), qss2bq2259625e9l0555bb25e066qb62(String), 2019-01-09 19:44:17.938(Timestamp), 2019-01-09 19:44:17.938(Timestamp), 12(Integer)
+2019-01-09 19:44:18:027 [http-nio-8080-exec-5] DEBUG com.chq.ssmshop.dao.LocalAuthDao.insertLocalAuth - <==    Updates: 1
+2019-01-09 19:46:23:972 [http-nio-8080-exec-8] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.LocalAuthDao.queryLocalByUserNameAndPwd] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:46:23:973 [http-nio-8080-exec-8] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:46:23:973 [http-nio-8080-exec-8] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==>  Preparing: select la.local_auth_id, la.username, la.password, la.create_time as la_create_time, la.last_edit_time as la_last_edit_time, la.person_info, pi.user_id, pi.name, pi.email, pi.gender, pi.enable_status, pi.user_type, pi.create_time as pi_create_time, pi.last_edit_time as pi_last_edit_time from tb_local_auth as la left join tb_person_info as pi on la.person_info = pi.user_id where la.username=? and la.password=? 
+2019-01-09 19:46:23:974 [http-nio-8080-exec-8] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - ==> Parameters: register(String), qss2bq2259625e9l0555bb25e066qb62(String)
+2019-01-09 19:46:23:997 [http-nio-8080-exec-8] DEBUG c.c.s.dao.LocalAuthDao.queryLocalByUserNameAndPwd - <==      Total: 1
+2019-01-09 19:46:27:763 [http-nio-8080-exec-1] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.PersonInfoDao.queryPersonInfoByUserId] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:46:27:763 [http-nio-8080-exec-1] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:46:27:763 [http-nio-8080-exec-6] DEBUG c.c.ssmshop.dao.split.DynamicDataSourceInterceptor - 设置方法[com.chq.ssmshop.dao.ShopDao.queryShopByOwnerId] use [slave] Strategy, SqlCommanType [SELECT]..
+2019-01-09 19:46:27:763 [http-nio-8080-exec-6] DEBUG com.chq.ssmshop.dao.split.DynamicDataSourceHolder - 所使用的数据源时：slave
+2019-01-09 19:46:27:763 [http-nio-8080-exec-1] DEBUG c.c.s.dao.PersonInfoDao.queryPersonInfoByUserId - ==>  Preparing: select * from tb_person_info where user_id=? 
+2019-01-09 19:46:27:764 [http-nio-8080-exec-6] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopByOwnerId - ==>  Preparing: select tb_shop.shop_id, tb_shop.owner_id, tb_person_info.name, tb_shop.area_id, tb_area.area_name, tb_shop.shop_category_id, tb_shop_category.shop_category_name, tb_shop.shop_name, tb_shop.shop_desc, tb_shop.shop_addr, tb_shop.phone, tb_shop.shop_img, tb_shop.priority, tb_shop.create_time, tb_shop.last_edit_time, tb_shop.enable_status, tb_shop.advice from tb_shop, tb_area, tb_person_info, tb_shop_category where tb_shop.owner_id=? 
+2019-01-09 19:46:27:765 [http-nio-8080-exec-6] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopByOwnerId - ==> Parameters: 12(Long)
+2019-01-09 19:46:27:770 [http-nio-8080-exec-1] DEBUG c.c.s.dao.PersonInfoDao.queryPersonInfoByUserId - ==> Parameters: 12(Long)
+2019-01-09 19:46:27:794 [http-nio-8080-exec-1] DEBUG c.c.s.dao.PersonInfoDao.queryPersonInfoByUserId - <==      Total: 1
+2019-01-09 19:46:27:802 [http-nio-8080-exec-6] DEBUG com.chq.ssmshop.dao.ShopDao.queryShopByOwnerId - <==      Total: 0
