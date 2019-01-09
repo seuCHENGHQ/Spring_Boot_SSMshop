@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>店铺信息修改</title>
+<meta name="description"
+	content="MSUI: Build mobile apps with simple HTML, CSS, and JS components.">
+<meta name="author" content="阿里巴巴国际UED前端">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 使用CDN来添加页面所需要的静态资源 -->
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<script type='text/javascript'
+	src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+	src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+
+<!-- 这里加载shopregister.js -->
+<script type="text/javascript" src="../resources/js/shop/shopupdate.js"
+	charset="utf-8"></script>
+<!-- 这里加载验证码相关的js -->
+<script type="text/javascript"
+	src="../resources/js/common/verifyCode.js" charset="utf-8"></script>
+<script type="text/javascript"
+	src="../resources/js/common/getUrlParameter.js" charset="utf-8"></script>
+
+</head>
+<body>
+	<div class="page-group">
+		<div id="page-label-input" class="page">
+			<header class="bar bar-nav">
+				<a id="return" class="button button-link button-nav pull-left back"
+					href="/SSMshop/shopadmin/listshop"> <span
+					class="icon icon-left"></span> 返回
+				</a>
+				<h1 class="title">店铺信息修改</h1>
+			</header>
+			<div class="content">
+				<div class="list-block">
+					<ul>
+						<!-- Text inputs -->
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">店铺名称</div>
+									<div class="item-input">
+										<input type="text" id="shop-name" placeholder="请输入店铺名字">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">店铺所属区域</div>
+									<div class="item-input">
+										<select id="shop-area">
+										</select>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">店铺类别</div>
+									<div class="item-input">
+										<select id="shop-category">
+										</select>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">店铺地址</div>
+									<div class="item-input">
+										<input type="text" id="shop-addr" placeholder="请填写店铺地址">
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- Date -->
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">店铺联系电话</div>
+									<div class="item-input">
+										<input type="text" id="phone" placeholder="请填写店铺联系电话">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">店铺图片</div>
+									<div class="item-input">
+										<input type="file" id="shop-img" placeholder="选择要上传的图片">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="align-top">
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">店铺描述</div>
+									<div class="item-input">
+										<textarea id="shop-desc"></textarea>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-input">
+										<img id="captcha_img" alt="点击更换" title="点击更换" src="../Kaptcha"
+											onclick="changeVerifyCode(this)" />
+									</div>
+									<input id="j_captcha" type="text" placeholder="输入验证码">
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="content-block">
+					<div class="row">
+						<div id="cancel" class="col-50">
+							<a href="/SSMshop/shopadmin/shoplist"
+								class="button button-big button-fill button-danger">取消</a>
+						</div>
+						<div class="col-50">
+							<a href="#" class="button button-big button-fill button-success"
+								id="submit">提交</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

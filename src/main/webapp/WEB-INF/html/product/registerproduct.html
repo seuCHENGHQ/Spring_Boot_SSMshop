@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>商品注册</title>
+<meta name="description"
+	content="MSUI: Build mobile apps with simple HTML, CSS, and JS components.">
+<meta name="author" content="阿里巴巴国际UED前端">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 使用CDN来添加页面所需要的静态资源 -->
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<script type='text/javascript'
+	src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+	src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+
+<!-- 这里加载registerproduct.js -->
+<script type="text/javascript"
+	src="../resources/js/product/registerproduct.js" charset="utf-8"></script>
+<!-- 这里加载验证码相关的js -->
+<script type="text/javascript"
+	src="../resources/js/common/verifyCode.js" charset="utf-8"></script>
+<!-- 这里加载获取URL参数的js程序 -->
+<script type="text/javascript"
+	src="../resources/js/common/getUrlParameter.js" charset="utf-8"></script>
+
+</head>
+<body>
+	<div class="page-group">
+		<div id="page-label-input" class="page">
+			<header class="bar bar-nav">
+				<a id="return" class="button button-link button-nav pull-left back"
+					href=""> <span class="icon icon-left"></span> 返回
+				</a>
+				<h1 class="title">商品注册</h1>
+			</header>
+			<div class="content">
+				<div class="list-block">
+					<ul>
+						<!-- Text inputs -->
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">商品名称</div>
+									<div class="item-input">
+										<input type="text" id="product-name" placeholder="请输入商品名字">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">商品所属类别</div>
+									<div class="item-input">
+										<select id="product-category">
+											<option>下拉选项，等待和后端进行联动</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">正常售价</div>
+									<div class="item-input">
+										<input type="text" id="normal-price" placeholder="正常售价">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">促销售价</div>
+									<div class="item-input">
+										<input type="text" id="promotion-price" placeholder="促销售价">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">优先级</div>
+									<div class="item-input">
+										<input type="text" id="priority" placeholder="优先级越大越靠前">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">商品缩略图</div>
+									<div class="item-input">
+										<input type="file" id="product-thumbnail"
+											placeholder="选择要上传的图片">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">商品大图</div>
+									<div id="detail-img" class="item-input detail-img-div">
+										<input type="file" class="detail-img" placeholder="选择要上传的图片">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="align-top">
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title label">商品描述</div>
+									<div class="item-input">
+										<textarea id="product-desc" placeholder="填写商品描述"></textarea>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-input">
+										<img id="captcha_img" alt="点击更换" title="点击更换" src="../Kaptcha"
+											onclick="changeVerifyCode(this)" />
+									</div>
+									<input id="j_captcha" type="text" placeholder="输入验证码">
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="content-block">
+					<div class="row">
+						<div id="cancel" class="col-50">
+							<a href="" class="button button-big button-fill button-danger">取消</a>
+						</div>
+						<div class="col-50">
+							<a href="#" class="button button-big button-fill button-success"
+								id="submit">提交</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

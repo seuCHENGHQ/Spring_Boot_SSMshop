@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chq.ssmshop.dao.LocalAuthDao">
+	<select id="queryLocalByUserNameAndPwd" resultMap="localAuthMap"
+		parameterType="String">
+		select
+		la.local_auth_id,
+		la.username,
+		la.password,
+		la.create_time as
+		la_create_time,
+		la.last_edit_time as
+		la_last_edit_time,
+		la.person_info,
+		pi.user_id,
+		pi.name,
+		pi.email,
+		pi.gender,
+		pi.enable_status,
+		pi.user_type,
+		pi.create_time as pi_create_time,
+		pi.last_edit_time as
+		pi_last_edit_time
+		from tb_local_auth as la
+		left
+		join
+		tb_person_info as pi
+		on
+		la.person_info = pi.user_id
+		where
+		la.username=#{username}
+		and
+		la.password=#{password}
+	</select>
+
+	<select id="queryLocalByUserId" parameterType="long"
+		resultMap="localAuthMap">
+		select
+		la.local_auth_id,
+		la.username,
+		la.password,
+		la.create_time as la_create_time,
+		la.last_edit_time as
+		la_last_edit_time,
+		la.person_info,
+		pi.user_id,
+		pi.name,
+		pi.email,
+		pi.gender,
+		pi.enable_status,
+		pi.user_type,
+		pi.create_time as pi_create_time,
+		pi.last_edit_time as pi_last_edit_time
+		from tb_local_auth as la
+		left
+		join
+		tb_person_info as pi
+		on
+		la.person_info = pi.user_id
+		where
+		la.person_info=#{userId}
+	</select>
+
+	<resultMap type="com.chq.ssmshop.entity.LocalAuth"
+		id="localAuthMap">
+		<id column="local_auth_id" property="localAuthId" />
+		<result column="username" property="username" />
+		<result column="password" property="password" />
+		<result column="la_create_time" property="createTime" />
+		<result column="la_last_edit_time" property="lastEditTime" />
+		<association column="person_info" property="personInfo"
+			javaType="com.chq.ssmshop.entity.PersonInfo">
+			<id column="person_info" property="userId" />
+			<result column="name" property="name" />
+			<result column="profile_img" property="profileImg" />
+			<result column="email" property="email" />
+			<result column="gender" property="gender" />
+			<result column="enable_status" property="enableStatus" />
+			<result column="user_type" property="userType" />
+			<result column="pi_create_time" property="createTime" />
+			<result column="pi_last_edit_time" property="lastEditTime" />
+		</association>
+	</resultMap>
+
+	<insert id="insertLocalAuth" useGeneratedKeys="true"
+		parameterType="com.chq.ssmshop.entity.LocalAuth"
+		keyColumn="local_auth_id" keyProperty="localAuthId">
+		insert into tb_local_auth(
+		username,password,create_time,last_edit_time,person_info
+		)values(
+		#{username},#{password},#{createTime},#{lastEditTime},#{personInfo.userId}
+		)
+	</insert>
+
+	<update id="updateLocalAuth">
+		update tb_local_auth
+		<set>
+			<if test="newPassword!=null">password=#{newPassword},</if>
+			<if test="lastEditTime!=null">last_edit_time=#{lastEditTime},</if>
+		</set>
+		where
+		person_info=#{userId}
+		and
+		username=#{username}
+		and
+		password=#{password}
+	</update>
+</mapper>

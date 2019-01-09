@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.chq.ssmshop.dao.ProductCategoryDao">
+	<insert id="insertProductCategory"
+		parameterType="com.chq.ssmshop.entity.ProductCategory"
+		useGeneratedKeys="true" keyColumn="product_category_id"
+		keyProperty="productCategoryId">
+		insert into tb_product_category(
+		product_category_id,product_category_name,priority,create_time,last_edit_time,shop_id
+		) values(
+		#{productCategoryId},#{productCategoryName},#{priority},#{createTime},#{lastEditTime},#{shop.shopId}
+		)
+	</insert>
+
+	<update id="updateProductCategory"
+		parameterType="com.chq.ssmshop.entity.ProductCategory">
+		update tb_product_category
+		<set>
+			<if test="productCategoryName!=null">product_category_name=#{productCategoryName},</if>
+			<if test="priority!=null">priority=#{priority},</if>
+			<if test="lastEditTime!=null">last_edit_time=#{lastEditTime},</if>
+		</set>
+		where product_category_id=#{productCategoryId}
+	</update>
+
+	<select id="getProductCategoryListByShopId" parameterType="Long"
+		resultMap="productCategoryMap">
+		select
+		tpc.product_category_id,
+		tpc.product_category_name,
+		tpc.priority,
+		tpc.create_time,
+		tpc.last_edit_time,
+		tpc.shop_id,
+		ts.shop_name
+		from
+		tb_shop as ts,
+		tb_product_category as tpc
+		where
+		tpc.shop_id=#{shopId}
+		order by
+		tpc.priority
+	</select>
+
+	<resultMap id="productCategoryMap"
+		type="com.chq.ssmshop.entity.ProductCategory">
+		<id column="product_category_id" property="productCategoryId" />
+		<result column="product_category_name"
+			property="productCategoryName" />
+		<result column="priority" property="priority" />
+		<result column="create_time" property="createTime" />
+		<result column="last_edit_time" property="lastEditTime" />
+		<association column="shop_id" property="shop"
+			javaType="com.chq.ssmshop.entity.Shop">
+			<id column="shop_id" property="shopId" />
+			<result column="shop_name" property="shopName" />
+		</association>
+	</resultMap>
+
+	<select id="getProductCategoryByProductCategoryId"
+		parameterType="Long" resultMap="productCategoryMap">
+		select
+		tpc.product_category_id,
+		tpc.product_category_name,
+		tpc.priority,
+		tpc.create_time,
+		tpc.last_edit_time,
+		tpc.shop_id,
+		ts.shop_name
+		from
+		tb_shop as ts,
+		tb_product_category as tpc
+		where
+		tpc.product_category_id=#{productCategoryId}
+	</select>
+
+	<delete id="deleteProductCategoryById" parameterType="Long">
+		delete from
+		tb_product_category
+		where product_category_id=#{productCategoryId}
+	</delete>
+</mapper>

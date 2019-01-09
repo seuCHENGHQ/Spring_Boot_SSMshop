@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>店铺列表</title>
+<meta name="description"
+	content="MSUI: Build mobile apps with simple HTML, CSS, and JS components.">
+<meta name="author" content="阿里巴巴国际UED前端">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+
+<!-- 使用CDN来添加页面所需要的静态资源 -->
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<link rel="stylesheet" href="../resources/css/shop/shopmanagement.css">
+<link rel="stylesheet" href="../resources/css/shop/shoplist.css">
+<link rel="stylesheet"
+	href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+<script type='text/javascript'
+	src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript'
+	src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+
+<!-- 添加本页面需要的js文件 -->
+<script type="text/javascript" src="../resources/js/shop/shoplist.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="../resources/js/common/getUrlParameter.js" charset="utf-8"></script>
+</head>
+
+<body>
+	<header class="bar bar-nav">
+		<a id="return" class="button button-link button-nav pull-left back"
+			href="/SSMshop/frontend/mainpage"> <span class="icon icon-left"></span>
+			返回
+		</a>
+		<h1 class="title">商店列表</h1>
+	</header>
+	<div class="content">
+		<div class="content-block">
+			<p>
+				你好,<span id="user-name"></span>
+			</p>
+			<div class="row row-shop">
+				<div class="col-40 mb">商店名称</div>
+				<div class="col-40 mb">状态</div>
+				<div class="col-20 mb">操作</div>
+			</div>
+			<!-- 将查询到的该用户名下的店铺显示在shop-wrap这个div中 -->
+			<div id="shop-list" class="shop-wrap">
+				<div class="row">
+					<div class="col-40 mb">测试店铺</div>
+					<div class="col-40 mb">审核通过</div>
+					<div class="col-20 mb">
+						<a href="" class="button">进入</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-block">
+			<div class="row">
+				<div class="col-50">
+					<a href="/SSMshop/frontend/mainpage" class="button button-big button-fill button-danger">返回</a>
+				</div>
+				<div class="col-50">
+					<a href="/SSMshop/shopadmin/register"
+						class="button button-big button-fill button-success">新增店铺</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

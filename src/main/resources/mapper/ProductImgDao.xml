@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chq.ssmshop.dao.ProductImgDao">
+	<insert id="insertProductImg"
+		parameterType="com.chq.ssmshop.entity.ProductImg"
+		useGeneratedKeys="true" keyColumn="product_img_id"
+		keyProperty="productImgId">
+		insert into tb_product_img(
+		product_img_id,img_addr,img_desc,priority,create_time,product_id
+		)values(
+		#{productImgId},#{imgAddr},#{imgDesc},#{priority},#{createTime},#{product.productId}
+		)
+	</insert>
+
+
+	<select id="getProductImgByProductImgId" parameterType="Long" resultMap="productImgMap">
+		select
+		tpi.product_img_id,
+		tpi.img_addr,
+		tpi.img_desc,
+		tpi.priority,
+		tpi.create_time,
+		tpi.product_id,
+		tp.product_name
+		from
+		tb_product_img as tpi,
+		tb_product as tp
+		where tpi.product_img_id=#{productImgId}
+	</select>
+	
+	<select id="getProductImgListByProductId" parameterType="Long" resultMap="productImgMap">
+		select
+		tpi.product_img_id,
+		tpi.img_addr,
+		tpi.img_desc,
+		tpi.priority,
+		tpi.create_time,
+		tpi.product_id,
+		tp.product_name
+		from
+		tb_product_img as tpi,
+		tb_product as tp
+		where tpi.product_id=#{productId}
+		order by
+		tpi.priority desc
+	</select>
+	
+	<resultMap type="com.chq.ssmshop.entity.ProductImg" id="productImgMap">
+		<id column="product_img_id" property="productImgId"/>
+		<result column="img_addr" property="imgAddr"/>
+		<result column="img_desc" property="imgDesc"/>
+		<result column="priority" property="priority"/>
+		<result column="create_time" property="createTime"/>
+		<association column="product_id" javaType="com.chq.ssmshop.entity.Product" property="product">
+			<id column="product_id" property="productId"/>
+			<result column="product_name" property="productName"/>
+		</association>
+	</resultMap>
+
+	<delete id="deleteProductImg" parameterType="Long">
+		delete from tb_product_img
+		where product_img_id=#{productImgId}
+	</delete>
+</mapper>

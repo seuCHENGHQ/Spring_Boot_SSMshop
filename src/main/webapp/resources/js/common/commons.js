@@ -1,0 +1,6 @@
+/**
+ * 
+ */
+function getServletContextPath() {
+	return '/SSMshop';
+}
